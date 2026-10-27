@@ -89,8 +89,12 @@ temos: (9.321.993 + 4.776.239) - 3.721.538 = 10.376.694 que é a quantidade a ma
 Com este cenário, vamos nos aprofundar na análise para entender melhor de onde veio esta diferença.
 
 Antes de criar os gráficos, vamos responder as questões levantadas.
-Foi criado o arqvuivo: analise_exploratorio.py 
-Respondidas as perguntas, não foi chegada a uma conclusão, pois a primeira pergunta - que traria uma melhor visão da virada dos votos, trouxe uma visão muito limitada do 'Todo'
+Foi criado o arqvuivo: analise_exploratorio.py.
+Respondidas as perguntas, não foi chegada a uma conclusão, pois:
+ a primeira pergunta - que traria uma melhor visão da virada dos votos, trouxe uma visão muito limitada do 'Todo'
+ a segunda pergunta - trouxe um pouco de luz sobre o assunto, mas pouco relevante; entre as cidades que tiveram maior quantidade de voto em relação ao segundo turno, tivemos as maiores cidades do país; talvez uma análise relativa fizesse mais sentido
+ a terceia pergunta - foi bem parecida com a resposta atnerior, exceto por brasília, tiveram a mesma ordem (grandes cidades)
+Vamos voltar a objeto do estudo: Onde e como ocorreu a virada?
 
 
 
