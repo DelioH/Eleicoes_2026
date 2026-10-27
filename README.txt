@@ -43,30 +43,55 @@ NR_TURNO SG_UF  CD_MUNICIPIO NM_MUNICIPIO               NM_VOTAVEL  QT_VOTOS
 2         1    AC          1007       BUJARI     EDMILSON SILVA COSTA         3
 
 *Análise exploratório*
+Antes de começar a criar os gráficos e responder as perguntas tema da análise, optou-se por fazer uma análise superficial dos dados para entender melhor a situação dos 2 turnos da eleição.
+Perguntas:
+- Quantos pessoas/votos tivemos por turno (votos nominais e brancos/nulos)?
+- Qual a quantidade de votos para cada um dos candidados nos 2 turnos?
+- Quanto houve de diferença do primeiro turno em relação ao segundo
+Analisando os dados, tivemos as seguinte informações:
+No primeiro turno tivemos 125.275.835 votos, sendo 5.969.801 brancos e nulos
+Já no segundo turno tivemos 128.236.074 votos, sendo 4.153.801 brancos e nulos
+Sendo assim, do primeiro para o segundo turno, tivemos um aumento de 2.960.239 votos totais 
+Além disso, tivemos uma redução dos votos brancos/nulos. de 5.969.801 para 4.153.801
+Um total de 1.816.000 a mais de votos válidos.
+Ou seja, no total, tivemos 4.776.239 (2.960.239 + 1.816.000) votos a mais.
+Ou:
+(128.236.074 - 4.153.801) = 124.082.273 votos válidos
+(125.275.835 - 5.969.801) = 119.306.034 votos válidos
+Considerando somente votos válidos, tivemos (124.082.273 - 119.306.034) = +4.776.239 votos válidos, ou seja: +4%
+
+Agora, olhando o cenários dos candidados que foram para o segundo turno, tivemos:
+FLAVIO NANTES BOLSONARO
+  1º Turno: 56.104.503
+  2º Turno: 59.826.041
+  Diferença: +3.721.538, ou seja, +6,7%
+
+LUIZ INÁCIO LULA DA SILVA
+  1º Turno: 53.879.538
+  2º Turno: 64.256.232
+  Diferença: +10.376.694, ou seja, +19,26%
+
+O segundo candidato virou a eleição no segundo turno, embora o primeiro candidato tenha tido crescimento em relação ao primeiro turno.
+Agora, considerando os votos totais válidos do primeiro turno; podemos dizer que ele absorveu todos os outros votos?
+AUGUSTO JORGE CURY: 3.448.569
+CLARIANA ZACARKIM BARAO: 40.043
+EDMILSON SILVA COSTA: 22.693
+HERTZ DA CONCEICAO DIAS: 43.103
+LEONARDO ALVES DE ARAUJO: 5.246
+RENAN ANTONIO FERREIRA DOS SANTOS: 2.675.887
+ROMEU ZEMA NETO: 326.488
+RONALDO RAMOS CAIADO: 2.605.148
+RUI COSTA PIMENTA: 15.024
+SAMARA MARTINS DA SILVA FEITOSA: 122.911
+WILSON GRASSI JUNIOR: 16.881
+Somando todos os votos dos outros candidatos, tem-se 9.321.993 votos válidos, junto com o o que tivemos a mais de votos no segundo turno +4.776.239 e subtraindo os votos que foram para o primeiro candidato, -3.721.538,
+temos: (9.321.993 + 4.776.239) - 3.721.538 = 10.376.694 que é a quantidade a mais de votos do segundo candidato em relação ao segundo turno.
+Com este cenário, vamos nos aprofundar na análise para entender melhor de onde veio esta diferença.
+
 Antes de criar os gráficos, vamos responder as questões levantadas.
-Foi criado o arqvuivo: eda.py 
+Foi criado o arqvuivo: analise_exploratorio.py 
 Respondidas as perguntas, não foi chegada a uma conclusão, pois a primeira pergunta - que traria uma melhor visão da virada dos votos, trouxe uma visão muito limitada do 'Todo'
 
 
-PS D:\Estudos\Dados\Projetos\Modulo2 - ProjetoFinal - 2> git add .
-PS D:\Estudos\Dados\Projetos\Modulo2 - ProjetoFinal - 2> git commit -m "Extraindo e transformando os dados para análise além de melhorar as perguntas e objetivo do trabalho"
-[dev c9a5115] Extraindo e transformando os dados para análise além de melhorar as perguntas e objetivo do trabalho
- 5 files changed, 60 insertions(+), 162 deletions(-)
- delete mode 100644 Dados/votacao_secao_2026_BR.csv
- delete mode 100644 Fontes/eda.py
-PS D:\Estudos\Dados\Projetos\Modulo2 - ProjetoFinal - 2> git push
-Enumerating objects: 34, done.
-Counting objects: 100% (34/34), done.
-Delta compression using up to 12 threads
-Compressing objects: 100% (23/23), done.
-Writing objects: 100% (24/24), 230.69 MiB | 7.09 MiB/s, done.
-Total 24 (delta 8), reused 0 (delta 0), pack-reused 0 (from 0)
-remote: Resolving deltas: 100% (8/8), completed with 6 local objects.
-remote: error: Trace: 21674612c4d71898346ced2c2670f8e3b252307c6c6d16320426466944c7dc44
-remote: error: See https://gh.io/lfs for more information.
-remote: error: File Dados/votacao_secao_2026_BR.csv is 1499.95 MB; this exceeds GitHub's file size limit of 100.00 MB
-remote: error: GH001: Large files detected. You may want to try Git Large File Storage - https://git-lfs.github.com.
-To https://github.com/DelioH/Eleicoes_2026.git
- ! [remote rejected] dev -> dev (pre-receive hook declined)
-error: failed to push some refs to 'https://github.com/DelioH/Eleicoes_2026.git'
-PS D:\Estudos\Dados\Projetos\Modulo2 - ProjetoFinal - 2> 
+
+
