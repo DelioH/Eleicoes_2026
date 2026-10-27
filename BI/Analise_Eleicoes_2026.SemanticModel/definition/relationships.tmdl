@@ -1,0 +1,10 @@
+relationship fac712df-f9d9-413f-a3b3-2c03c748252c
+	joinOnDateBehavior: datePartOnly
+	fromColumn: votacao_secao_2026_BR.DT_GERACAO
+	toColumn: LocalDateTable_dcd1d348-1601-4eee-9716-f568d9c0537b.Date
+
+relationship a12d7d77-a8b1-4bb6-80fc-eea12c21f28c
+	joinOnDateBehavior: datePartOnly
+	fromColumn: votacao_secao_2026_BR.DT_ELEICAO
+	toColumn: LocalDateTable_55888d34-ccc2-4511-8180-ed0494d9096e.Date
+

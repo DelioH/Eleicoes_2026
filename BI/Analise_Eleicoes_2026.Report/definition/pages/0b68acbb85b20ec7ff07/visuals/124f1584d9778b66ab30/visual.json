@@ -1,0 +1,122 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
+  "name": "124f1584d9778b66ab30",
+  "position": {
+    "x": 0,
+    "y": 0,
+    "z": 0,
+    "height": 739.69604863221889,
+    "width": 722.18844984802433,
+    "tabOrder": 0
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "votacao_secao_2026_BR"
+                    }
+                  },
+                  "Property": "NR_TURNO"
+                }
+              },
+              "queryRef": "Sum(votacao_secao_2026_BR.NR_TURNO)",
+              "nativeQueryRef": "NR_TURNO"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "votacao_secao_2026_BR"
+                    }
+                  },
+                  "Property": "NM_VOTAVEL"
+                }
+              },
+              "queryRef": "votacao_secao_2026_BR.NM_VOTAVEL",
+              "nativeQueryRef": "NM_VOTAVEL"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "votacao_secao_2026_BR"
+                        }
+                      },
+                      "Property": "QT_VOTOS"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(votacao_secao_2026_BR.QT_VOTOS)",
+              "nativeQueryRef": "Soma de QT_VOTOS"
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "47950b08df758b8aae78",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "votacao_secao_2026_BR"
+                  }
+                },
+                "Property": "QT_VOTOS"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "7c17f3098e05a5e18cdb",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "votacao_secao_2026_BR"
+              }
+            },
+            "Property": "NR_TURNO"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "3e732edeb85afcf9d516",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "votacao_secao_2026_BR"
+              }
+            },
+            "Property": "NM_VOTAVEL"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
+  }
+}

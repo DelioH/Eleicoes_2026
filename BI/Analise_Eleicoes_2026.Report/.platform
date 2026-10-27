@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "Analise_Eleicoes_2026"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "f922b0f3-2559-42b1-9907-3b33f1301236"
+  }
+}

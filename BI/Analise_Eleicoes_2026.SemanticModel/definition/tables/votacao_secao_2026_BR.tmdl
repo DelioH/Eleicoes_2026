@@ -1,0 +1,257 @@
+table votacao_secao_2026_BR
+	lineageTag: 60b1f266-8ee9-4cdd-9bd9-e2516309c715
+
+	column DT_GERACAO
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: e38b1e3d-c49e-47ed-9411-2763e959ad1c
+		summarizeBy: none
+		sourceColumn: DT_GERACAO
+
+		variation Variação
+			isDefault
+			relationship: fac712df-f9d9-413f-a3b3-2c03c748252c
+			defaultHierarchy: LocalDateTable_dcd1d348-1601-4eee-9716-f568d9c0537b.'Hierarquia de datas'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column HH_GERACAO
+		dataType: dateTime
+		formatString: Long Time
+		lineageTag: d92cea69-aae8-4cf2-8499-f8b185aee141
+		summarizeBy: none
+		sourceColumn: HH_GERACAO
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Time
+
+	column ANO_ELEICAO
+		dataType: int64
+		formatString: 0
+		lineageTag: 8619949d-c926-4560-a359-9e47e9562e6c
+		summarizeBy: sum
+		sourceColumn: ANO_ELEICAO
+
+		annotation SummarizationSetBy = Automatic
+
+	column CD_TIPO_ELEICAO
+		dataType: int64
+		formatString: 0
+		lineageTag: 408e9059-b916-47a6-8d4d-fd376c3abad8
+		summarizeBy: sum
+		sourceColumn: CD_TIPO_ELEICAO
+
+		annotation SummarizationSetBy = Automatic
+
+	column NM_TIPO_ELEICAO
+		dataType: string
+		lineageTag: 02f92982-30c2-4b97-bea5-d56002a8205c
+		summarizeBy: none
+		sourceColumn: NM_TIPO_ELEICAO
+
+		annotation SummarizationSetBy = Automatic
+
+	column NR_TURNO
+		dataType: int64
+		formatString: 0
+		lineageTag: 3ea4954d-38cd-4279-ad1e-0cd57b7c7352
+		summarizeBy: sum
+		sourceColumn: NR_TURNO
+
+		annotation SummarizationSetBy = Automatic
+
+	column CD_ELEICAO
+		dataType: int64
+		formatString: 0
+		lineageTag: 782f1727-8663-4686-a5d0-9a6923570ad9
+		summarizeBy: sum
+		sourceColumn: CD_ELEICAO
+
+		annotation SummarizationSetBy = Automatic
+
+	column DS_ELEICAO
+		dataType: string
+		lineageTag: 8b163f3f-febe-49bf-a4a9-66bd23d48605
+		summarizeBy: none
+		sourceColumn: DS_ELEICAO
+
+		annotation SummarizationSetBy = Automatic
+
+	column DT_ELEICAO
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: e5438cda-423b-424c-b3fc-3798931ac60d
+		summarizeBy: none
+		sourceColumn: DT_ELEICAO
+
+		variation Variação
+			isDefault
+			relationship: a12d7d77-a8b1-4bb6-80fc-eea12c21f28c
+			defaultHierarchy: LocalDateTable_55888d34-ccc2-4511-8180-ed0494d9096e.'Hierarquia de datas'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column TP_ABRANGENCIA
+		dataType: string
+		lineageTag: 71505ad6-fd57-4b17-8664-051b5df7f1af
+		summarizeBy: none
+		sourceColumn: TP_ABRANGENCIA
+
+		annotation SummarizationSetBy = Automatic
+
+	column SG_UF
+		dataType: string
+		lineageTag: e6596329-d81e-4ced-969b-dfc65bf3de4a
+		summarizeBy: none
+		sourceColumn: SG_UF
+
+		annotation SummarizationSetBy = Automatic
+
+	column SG_UE
+		dataType: string
+		lineageTag: 9b7359bc-f0cb-44f1-8990-edee950e9e39
+		summarizeBy: none
+		sourceColumn: SG_UE
+
+		annotation SummarizationSetBy = Automatic
+
+	column NM_UE
+		dataType: string
+		lineageTag: 9c2fa825-196e-4549-8eb0-e66e0be118cf
+		summarizeBy: none
+		sourceColumn: NM_UE
+
+		annotation SummarizationSetBy = Automatic
+
+	column CD_MUNICIPIO
+		dataType: int64
+		formatString: 0
+		lineageTag: 3afc0a96-77da-4492-8499-4252674dc8ef
+		summarizeBy: sum
+		sourceColumn: CD_MUNICIPIO
+
+		annotation SummarizationSetBy = Automatic
+
+	column NM_MUNICIPIO
+		dataType: string
+		lineageTag: a4b6b38b-55ff-450d-a7a6-ebafd0c2d44a
+		summarizeBy: none
+		sourceColumn: NM_MUNICIPIO
+
+		annotation SummarizationSetBy = Automatic
+
+	column NR_ZONA
+		dataType: int64
+		formatString: 0
+		lineageTag: aa29a09f-94c7-4173-8183-0cb99ac4e2e0
+		summarizeBy: sum
+		sourceColumn: NR_ZONA
+
+		annotation SummarizationSetBy = Automatic
+
+	column NR_SECAO
+		dataType: int64
+		formatString: 0
+		lineageTag: 7ed0d0dc-0e90-47ba-ba0e-5429993562bb
+		summarizeBy: sum
+		sourceColumn: NR_SECAO
+
+		annotation SummarizationSetBy = Automatic
+
+	column CD_CARGO
+		dataType: int64
+		formatString: 0
+		lineageTag: 7583b5b2-0809-44ee-907f-0036c7080d97
+		summarizeBy: sum
+		sourceColumn: CD_CARGO
+
+		annotation SummarizationSetBy = Automatic
+
+	column DS_CARGO
+		dataType: string
+		lineageTag: 36516bc6-694c-439c-a6b5-bf73f5abdaa1
+		summarizeBy: none
+		sourceColumn: DS_CARGO
+
+		annotation SummarizationSetBy = Automatic
+
+	column NR_VOTAVEL
+		dataType: int64
+		formatString: 0
+		lineageTag: 0d1224be-b6a6-4437-bd1c-290d923ce20b
+		summarizeBy: sum
+		sourceColumn: NR_VOTAVEL
+
+		annotation SummarizationSetBy = Automatic
+
+	column NM_VOTAVEL
+		dataType: string
+		lineageTag: a5f83678-94b1-4ba5-ba8f-15ef373af60d
+		summarizeBy: none
+		sourceColumn: NM_VOTAVEL
+
+		annotation SummarizationSetBy = Automatic
+
+	column QT_VOTOS
+		dataType: int64
+		formatString: 0
+		lineageTag: f95f4e13-f96a-4765-8c15-b71d5099220c
+		summarizeBy: sum
+		sourceColumn: QT_VOTOS
+
+		annotation SummarizationSetBy = Automatic
+
+	column NR_LOCAL_VOTACAO
+		dataType: int64
+		formatString: 0
+		lineageTag: 23e954b6-9dcf-4c77-9611-28d936dc62a5
+		summarizeBy: sum
+		sourceColumn: NR_LOCAL_VOTACAO
+
+		annotation SummarizationSetBy = Automatic
+
+	column SQ_CANDIDATO
+		dataType: int64
+		formatString: 0
+		lineageTag: 63f5e1b2-9d80-415c-8a2e-2a4f8614f67f
+		summarizeBy: sum
+		sourceColumn: SQ_CANDIDATO
+
+		annotation SummarizationSetBy = Automatic
+
+	column NM_LOCAL_VOTACAO
+		dataType: string
+		lineageTag: 2f9faf5e-a356-4861-8857-7a337b7961d8
+		summarizeBy: none
+		sourceColumn: NM_LOCAL_VOTACAO
+
+		annotation SummarizationSetBy = Automatic
+
+	column DS_LOCAL_VOTACAO_ENDERECO
+		dataType: string
+		lineageTag: 989fb132-be7d-4794-90c6-06f725abe189
+		summarizeBy: none
+		sourceColumn: DS_LOCAL_VOTACAO_ENDERECO
+
+		annotation SummarizationSetBy = Automatic
+
+	partition votacao_secao_2026_BR = m
+		mode: import
+		source =
+				let
+				    Fonte = Csv.Document(File.Contents("D:\Estudos\Dados\Projetos\Modulo2 - ProjetoFinal - 2\Dados\votacao_secao_2026_BR.csv"),[Delimiter=";", Columns=26, Encoding=1252, QuoteStyle=QuoteStyle.None]),
+				    #"Cabeçalhos Promovidos" = Table.PromoteHeaders(Fonte, [PromoteAllScalars=true]),
+				    #"Tipo Alterado" = Table.TransformColumnTypes(#"Cabeçalhos Promovidos",{{"DT_GERACAO", type date}, {"HH_GERACAO", type time}, {"ANO_ELEICAO", Int64.Type}, {"CD_TIPO_ELEICAO", Int64.Type}, {"NM_TIPO_ELEICAO", type text}, {"NR_TURNO", Int64.Type}, {"CD_ELEICAO", Int64.Type}, {"DS_ELEICAO", type text}, {"DT_ELEICAO", type date}, {"TP_ABRANGENCIA", type text}, {"SG_UF", type text}, {"SG_UE", type text}, {"NM_UE", type text}, {"CD_MUNICIPIO", Int64.Type}, {"NM_MUNICIPIO", type text}, {"NR_ZONA", Int64.Type}, {"NR_SECAO", Int64.Type}, {"CD_CARGO", Int64.Type}, {"DS_CARGO", type text}, {"NR_VOTAVEL", Int64.Type}, {"NM_VOTAVEL", type text}, {"QT_VOTOS", Int64.Type}, {"NR_LOCAL_VOTACAO", Int64.Type}, {"SQ_CANDIDATO", Int64.Type}, {"NM_LOCAL_VOTACAO", type text}, {"DS_LOCAL_VOTACAO_ENDERECO", type text}}),
+				    #"Linhas Filtradas" = Table.SelectRows(#"Tipo Alterado", each true)
+				in
+				    #"Linhas Filtradas"
+
+	annotation PBI_NavigationStepName = Navegação
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,22 @@
+model Model
+	culture: pt-BR
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: pt-BR
+	valueFilterBehavior: independent
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation __PBI_TimeIntelligenceEnabled = 1
+
+annotation PBI_ProTooling = ["DevMode"]
+
+annotation PBI_QueryOrder = ["votacao_secao_2026_BR"]
+
+ref table DateTableTemplate_d2262cc3-0d94-48e1-b5fe-090eba7e4016
+ref table votacao_secao_2026_BR
+ref table LocalDateTable_dcd1d348-1601-4eee-9716-f568d9c0537b
+ref table LocalDateTable_55888d34-ccc2-4511-8180-ed0494d9096e
+
+ref cultureInfo pt-BR
+
