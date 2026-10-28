@@ -94,7 +94,21 @@ Respondidas as perguntas, não foi chegada a uma conclusão, pois:
  a primeira pergunta - que traria uma melhor visão da virada dos votos, trouxe uma visão muito limitada do 'Todo'
  a segunda pergunta - trouxe um pouco de luz sobre o assunto, mas pouco relevante; entre as cidades que tiveram maior quantidade de voto em relação ao segundo turno, tivemos as maiores cidades do país; talvez uma análise relativa fizesse mais sentido
  a terceia pergunta - foi bem parecida com a resposta atnerior, exceto por brasília, tiveram a mesma ordem (grandes cidades)
-Vamos voltar a objeto do estudo: Onde e como ocorreu a virada?
+Vamos voltar a objeto do estudo: 
+Como se deu a virada de votos de votação?
+Foi pela redução de abstenção? Foi pela redução de Brancos e Nulos? Houve alguma mudança nos estados em que os candidatos ganharam?
+Embora as respostas as perguntas não tenham ajudado a elucidar totalmente a virada, entendemos que:
+- Embora a redução da abstenção, a redução de votos brancos e nulos e a conversão de votos de outras candidaturas não possam ser cravadas como os fatores únicos independentes (já que nenhum somado separadamente chega ao valor de diferença de votos do candidato que virou),
+ eles com certeza auxiliaram. Agora a questão é responder é: Quais fatores tiveram maior relavancia na virada dos votos?
+ Em um universo de 14.098.232 (entre redução da abstenção, redução de votos brancos/nulos e conversão de votos), sendo que 10.376.694 foi o total da diferença, o que cada um dos fatores pode ter representado para a virada das eleições?
+ 1 - Redução na abstenção - +2.960.239 votos (pode representar até 28,5% (2.960.239 / 10.376.694))
+ 2 - Redução de votos Brancos/Nulos - +1.816.000 votos (pode representar até 17% (1.816.000 / 10.376.694))
+ 3 - Conversão de votos - +9.321.993 votos (pode representar até 89,8% (9.321.993 / 10.376.694))
+ Agora a pergunta que fica é: Qual fator foi mais predominante na virada das eleições?
+ Considerando que o primeiro e o segundo fator tivessem se convertido predominantemente em votos para o segundo candidato, o percentual máximo de representação seria de 45,5%
+ Desta forma, podemos concluir que a conversão de votos foi responsável por, no mínimo 54,5% da conversão de votos; ou sejam o maior fator determinante para o resultado da virada das eleições.
+ 
+
 
 
 
