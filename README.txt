@@ -104,10 +104,14 @@ Embora as respostas as perguntas não tenham ajudado a elucidar totalmente a vir
  1 - Redução na abstenção - +2.960.239 votos (pode representar até 28,5% (2.960.239 / 10.376.694))
  2 - Redução de votos Brancos/Nulos - +1.816.000 votos (pode representar até 17% (1.816.000 / 10.376.694))
  3 - Conversão de votos - +9.321.993 votos (pode representar até 89,8% (9.321.993 / 10.376.694))
- Agora a pergunta que fica é: Qual fator foi mais predominante na virada das eleições?
- Considerando que o primeiro e o segundo fator tivessem se convertido predominantemente em votos para o segundo candidato, o percentual máximo de representação seria de 45,5%
- Desta forma, podemos concluir que a conversão de votos foi responsável por, no mínimo 54,5% da conversão de votos; ou sejam o maior fator determinante para o resultado da virada das eleições.
- 
+Agora a pergunta que fica é: Qual fator foi mais predominante na virada das eleições?
+Considerando que o primeiro e o segundo fator tivessem se convertido predominantemente em votos para o segundo candidato, o percentual máximo de representação seria de 45,5%
+Desta forma, podemos concluir que a conversão de votos foi responsável por, no mínimo 54,5% (equivalente a 5.655.298 votos) da conversão de votos; ou sejam o maior fator determinante para o resultado da virada das eleições.
+Esse votos bastariam para o candidato ganhar a eleição?
+Votos do segundo candidato no primeiro turno + conversão dos outros candidatos: 53.879.538 + 5.655.298 = 59.534.836, contra 59.826.041.
+Ou seja, só a conversão de votos dos outros candidatos não bastariam para o segundo candidato ganhar.
+
+Importante: Estou considerando que os votos ganhados no primeiro turno pelos 2 candidatos não foram convertidos para o outro, nem se tornaram brancos ou nulos (o que também é uma hipótese)
 
 
 
