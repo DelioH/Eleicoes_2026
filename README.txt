@@ -151,12 +151,46 @@ e vamos comparar os votos do candidadato 2 no primeiro turno com os votos dele n
 Gerado gráfico de dispersão da correlação 1
 os 2 candidatos tiveram uma correlação exata de 0.9996 cada um
 O que sugere uma correlação forte.
+Só para ter certeza se realmente eles tem a mesma correlação, vamos alterar para mostrar 10 casas decimais na correlação.
+Agora sim, tem uma diferença:
+Correlação Candidato 1:
+0.9995793420
+Correlação Candidato 2:
+0.9995710227
 na geração do grafico de dispersão, foi juntados os 2 gráficos lado a lado para entender melhor.
+Essa correlação forte quer dizer que os 2 candidatos mantiveram o padrão de votos nos municípios.
+Baseado neste resultaod, vamos agora correlacionar os ganhos, para ver como seguem o padrão; para entender se onde os candidatos já eram fortes, cresceram mais aidna
+Para entender melhor, agora foi feita uma nova correlação agora dos ganhos do candidato 1 e do candidato 2. Chegou-se a seguinte informnação:
+Correlação Ganhos Candidato 1:
+0.9511234405
 
+Correlação Ganhos Candidato 2:
+0.9892407229
 
+POde-se entender desta forma que os 2 candidatos tiveram um padrão de votação muito correlacionados no primeiro e segundo turno; 
+já os ganhos embora muito correlacionados, foram mais estáveis para o candidato 2.
 
+Talvez possamos medir essa estabilidade de crescimento com a media, mediana e desvio padrão e gerar um bloxpot. 
+Aqui não estamos pensando no valor absoluto de crescimento, mas na estabilidade.
+Adicionado indicador no analise da correlação.
+Os resultados: (uma ressalva: o candidato 1, teve municípios em que ele não obteve voto; foi necesário filtrar os dados dele para fazer o calculo - mas pela própria contagem, foram só 2 municípios).
+Resultado do cálculo:
+Crescimento do Candidato 1
+count    5714.000000
+mean        5.201758
+std         6.825783
+50%         5.912112
+Crescimento do Candidato 2
+count    5716.000000
+mean       17.160483
+std         9.183709
+50%        16.666667
 
+Bom, foram diferenças pequenas entre a média e a mediana do candidato 1, mas existem e são proporcionamente maiores que do candidato 2. 
+Mas o que mais me chamou atenção, embora não fosse o objetivo, é que a média de crescimento do candidato 2 foi bem maior, mais de 3,3 (se comparado com a média) e 2,8 se comparado a mediana.
+Ou seja; os 2 cresceram, mas o candidato 2 muito mais e de forma mais equilibrada (diferença entre média e mediana). 
 
+Agora vamos partir para a segunda correlação.
 
 
 
