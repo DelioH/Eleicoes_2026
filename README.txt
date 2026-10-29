@@ -110,8 +110,44 @@ Desta forma, podemos concluir que a conversão de votos foi responsável por, no
 Esse votos bastariam para o candidato ganhar a eleição?
 Votos do segundo candidato no primeiro turno + conversão dos outros candidatos: 53.879.538 + 5.655.298 = 59.534.836, contra 59.826.041.
 Ou seja, só a conversão de votos dos outros candidatos não bastariam para o segundo candidato ganhar.
+*Importante*: Estou considerando que os votos ganhados no primeiro turno pelos 2 candidatos não foram convertidos para o outro, nem se tornaram brancos ou nulos (o que também é uma hipótese)
 
-Importante: Estou considerando que os votos ganhados no primeiro turno pelos 2 candidatos não foram convertidos para o outro, nem se tornaram brancos ou nulos (o que também é uma hipótese)
+Por conta disso, vamos analisar algumas correlações.
+1 - Estabilidade eleitoral: Verificar se no segundo turno seguiu o mesmo padrão geográfico de votos. Assim, verificamos se houve uma mudança no padrão do voto.
+Responde a pergunta: O resultado do segundo turno foi consistene com o primeiro turno? (análise nacional)
+2 - Origem dos votos: Agora sim, correlacionar os fatores que identificamos na primeira análise que norteam a distribuição dos votos (Abstenção, Votos brancos e nulos e conversão de votos de outros candidatos)
+Responde a pergunta: De onde podem ter vindo os votos do segundo turno?
+
+1 - Estabilidade eleitoral
+Para gerar essa correlação, foi necessário criar uma nova fonte de dados, já com os dados ajustados para gerar a correlação.
+Foram criados os seguintes campos:
+UF - Estado
+Município
+Candidato1_T1 - Votos no candidato 1 no 1o. turno. Pela ordem alfabética, o candidato do PL
+Candidato2_T1 - Votos no candidato 2 no 1o. turno. Pela ordem alfabética, o candidato do PT
+Outros_T1 - Votos nos outros candidatos no 1o. turno.
+BrancosNulos_T1 - Votos em branco e nulos no 1o. turno. (agrupados os 2 pois não vamos correlacionar os 2 separadamente)
+Candidato1_T2 - Votos no candidato 1 no 1o. turno. Pela ordem alfabética, o candidato do PL
+Candidato2_T2 - Votos no candidato 2 no 1o. turno. Pela ordem alfabética, o candidato do PT
+BrancosNulos_T2 - Votos em branco e nulos no 1o. turno. (agrupados os 2 pois não vamos correlacionar os 2 separadamente)
+GanhoCandidato1 - Quantidade de votos que o candidato 1 ganhou no segundo turno.
+GanhoCandidato2 - Quantidade de votos que o candidato 2 ganhou no segundo turno.
+Votantes_T1 - Total de votantes no 1o. Turno.
+Votantes_T2 - Total de votantes no 2o. Turno.
+Var_Votantes - Votantes_T2 - Votantes_T1
+Var_Votantes_Perc - Percentual Var_Votantes
+Importante: Foi utilizada o nome Votantes, pois não temos a quantidade de eleitores por seção / município. Para uma futura análise, pode ser utilizada esta informação.
+Desta forma, isto vai funcioanr da seguinte forma: Se em um municípo 1.000 pessoas votaram no primeiro turno e 900 no segundo, as variáveis serão:
+Votantes_T1 = 1000
+Votantes_T2 = 900
+Var_Votantes = 900 - 1000 = -100
+Var_Votantes_Perc = -100/1.000 = -10%
+
+
+
+
+
+
 
 
 
