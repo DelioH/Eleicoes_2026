@@ -143,6 +143,17 @@ Votantes_T2 = 900
 Var_Votantes = 900 - 1000 = -100
 Var_Votantes_Perc = -100/1.000 = -10%
 
+Criada a fonte de dados 'base_correlacao_2026.csv'que já será capaz de fazer as 2 correlações propostas
+
+Para a primeira correlação vamos comparar os votos do candidato 1 no primeiro turno com os votos dele no segundo turno (Candidato1_T1 x Candidato1_T2)
+e vamos comparar os votos do candidadato 2 no primeiro turno com os votos dele no segundo turno (Candidato2_T1 x Candidato2_T2)
+
+Gerado gráfico de dispersão da correlação 1
+os 2 candidatos tiveram uma correlação exata de 0.9996 cada um
+O que sugere uma correlação forte.
+na geração do grafico de dispersão, foi juntados os 2 gráficos lado a lado para entender melhor.
+
+
 
 
 
