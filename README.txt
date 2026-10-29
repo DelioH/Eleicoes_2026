@@ -192,6 +192,27 @@ Ou seja; os 2 cresceram, mas o candidato 2 muito mais e de forma mais equilibrad
 
 Agora vamos partir para a segunda correlação.
 
+Correlação 2: de onde vieram os votos do segundo turno?
+Vamos fazer a correlação ponto a ponto
+Vamos começar entendendo a correlação dos ganhos do segundo turno com o voto dos outros.
+Municípios com muitos votos em candidatos eliminados foram também aqueles em que o candidato mais cresceu?
+=== ORIGEM DOS VOTOS: OUTROS CANDIDATOS ===
+
+Outros_T1 x GanhoCandidato1: 0.9867000262
+
+Outros_T1 x GanhoCandidato2: 0.9852105701
+A correlação é muito forte
+
+Com este resultado podemos entender que esse processo de 'associação' de votos (dos candidatos que não foram para o segundo turno) existiu de forma bem equilibrada nos municípios,
+e não somente em uma cidade muito grande que justificasse o resultado que tivemos.
+Agora vem a pergunta; quem ganhou mais com isto? e novamente qual a média de ganho de cada um com isto? E a mediana (embora pela correlaçaõ semelhante, não devem ter diferenças grandes entre media e mediana)
+
+Limitações: 
+
+
+
+
+
 
 
 
