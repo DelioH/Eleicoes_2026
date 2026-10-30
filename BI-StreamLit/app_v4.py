@@ -10,15 +10,23 @@ st.set_page_config(page_title="Dashboard Eleitoral - Virada 2026", layout="wide"
 # --- CARREGAMENTO DOS DADOS ---
 @st.cache_data
 def carregar_dados():
-    # Pega o diretório do app.py e sobe um nível (.parent) para acessar a pasta 'dados'
-    diretorio_atual = Path(__file__).resolve().parent
-    caminho = diretorio_atual.parent / "dados" / "base_correlacao_2026.csv"
+    # Define a raiz do projeto a partir do diretório de trabalho atual
+    # Isso funciona tanto no servidor Linux do Streamlit Cloud quanto localmente
+    raiz_projeto = Path.cwd()
     
+    # Procura o arquivo na pasta 'dados' na raiz do repositório
+    caminho = raiz_projeto / "dados" / "base_correlacao_2026.csv"
+    
+    # Caso o script app.py esteja em uma subpasta (ex: BI-StreamLit), tenta localizar a pasta dados na pasta pai
+    if not caminho.exists():
+        caminho = Path(__file__).resolve().parent.parent / "dados" / "base_correlacao_2026.csv"
+        
     try:
         df = pd.read_csv(caminho, sep=';', encoding='latin1')
     except Exception as e:
         st.error(f"Erro ao carregar o arquivo em {caminho}: {e}")
         st.stop()
+        
     return df
 
 df = carregar_dados()
