@@ -10,25 +10,13 @@ st.set_page_config(page_title="Dashboard Eleitoral - Virada 2026", layout="wide"
 # --- CARREGAMENTO DOS DADOS ---
 @st.cache_data
 def carregar_dados():
-    # 1. Âncora absoluta: pasta onde este arquivo de código atual está localizado
-    pasta_do_script = Path(__file__).resolve().parent
+    # Substitua pela URL Raw completa do seu arquivo no GitHub
+    url_raw = "https://github.com/DelioH/Eleicoes_2026/blob/dev/BI-StreamLit/dados/base_correlacao_2026.csv"
     
-    # 2. Tenta encontrar na mesma pasta do script (ex: app.py e a pasta 'dados' estão juntos)
-    caminho = pasta_do_script / "dados" / "base_correlacao_2026.csv"
-    
-    # 3. Se o script estiver em uma subpasta (ex: 'src' ou 'BI-StreamLit'), sobe um nível (parent)
-    if not caminho.exists():
-        caminho = pasta_do_script.parent / "dados" / "base_correlacao_2026.csv"
-        
-    # 4. Última tentativa caso o repositório tenha mais níveis de subpasta
-    if not caminho.exists():
-        caminho = Path.cwd() / "dados" / "base_correlacao_2026.csv"
-        
     try:
-        df = pd.read_csv(caminho, sep=';', encoding='latin1')
+        df = pd.read_csv(url_raw, sep=';', encoding='latin1')
     except Exception as e:
-        # Exibe o caminho absoluto gerado para ajudar a diagnosticar onde ele buscou
-        st.error(f"Erro ao carregar o arquivo em {caminho.resolve()}: {e}")
+        st.error(f"Erro ao carregar o arquivo direto do GitHub: {e}")
         st.stop()
         
     return df
