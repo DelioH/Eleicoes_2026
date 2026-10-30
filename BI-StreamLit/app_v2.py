@@ -164,7 +164,7 @@ st.header("4. Matriz de Dados Municipais (Exploração Detalhada)")
 st.markdown("Explore os municípios, ordene pelas colunas de ganho e analise a transferência de votos.")
 
 # Selecionando colunas relevantes da base de correlação
-df_tabela = df[['UF', 'Município', 'Candidato1_T1', 'Candidato2_T1', 'Outros_T1', 
+df_tabela = df[['SG_UF', 'NM_MUNICIPIO', 'Candidato1_T1', 'Candidato2_T1', 'Outros_T1', 
                 'Candidato1_T2', 'Candidato2_T2', 'GanhoCandidato1', 'GanhoCandidato2']].copy()
 
 # Cálculo percentual de crescimento individual por cidade
