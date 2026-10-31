@@ -10,11 +10,12 @@ st.set_page_config(page_title="Dashboard Eleitoral - Virada 2026", layout="wide"
 # --- CARREGAMENTO DOS DADOS ---
 @st.cache_data
 def carregar_dados():
-    # Substitua pela URL Raw completa do seu arquivo no GitHub
-    url_raw = "https://github.com/DelioH/Eleicoes_2026/blob/dev/BI-StreamLit/dados/base_correlacao_2026.csv"
+    # Sobe um nível para encontrar a pasta 'dados' e ler a base consolidada de correlação
+    diretorio_atual = Path(__file__).resolve().parent
+    caminho =  diretorio_atual / "dados" / "base_correlacao_2026.csv"
     
     try:
-        df = pd.read_csv(url_raw, sep=';', encoding='latin1')
+        df = pd.read_csv(caminho, sep=';', encoding='latin1')
     except Exception as e:
         st.error(f"Erro ao carregar o arquivo direto do GitHub: {e}")
         st.stop()

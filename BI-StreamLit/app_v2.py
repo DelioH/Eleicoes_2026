@@ -11,8 +11,8 @@ st.set_page_config(page_title="Análise da Dinâmica e Virada Eleitoral 2026", l
 @st.cache_data
 def carregar_dados():
     # Sobe um nível para encontrar a pasta 'dados' e ler a base consolidada de correlação
-    diretorio_atual = Path(__file__).resolve().parent
-    caminho = diretorio_atual.parent / "dados" / "base_correlacao_2026.csv"
+    #diretorio_atual = Path(__file__).resolve().parent
+    caminho = "dados/base_correlacao_2026.csv" #diretorio_atual.parent / "dados" / "base_correlacao_2026.csv"
     
     try:
         df = pd.read_csv(caminho, sep=';', encoding='latin1')
