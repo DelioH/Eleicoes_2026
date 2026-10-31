@@ -1,3 +1,5 @@
+# 30.10.2026 - v5 - Incluído barra lateral de filtros
+
 import streamlit as st
 import pandas as pd
 import plotly.express as px
@@ -10,21 +12,57 @@ st.set_page_config(page_title="Dashboard Eleitoral - Virada 2026", layout="wide"
 # --- CARREGAMENTO DOS DADOS ---
 @st.cache_data
 def carregar_dados():
-    # Sobe um nível para encontrar a pasta 'dados' e ler a base consolidada de correlação
+    # Encontra o diretório pai (raiz do projeto) a partir de BI-StreamLit e acessa a pasta 'dados'
     diretorio_atual = Path(__file__).resolve().parent
-    caminho =  diretorio_atual / "dados" / "base_correlacao_2026.csv"
+    caminho = diretorio_atual.parent / "dados" / "base_correlacao_2026.csv"
     
     try:
         df = pd.read_csv(caminho, sep=';', encoding='latin1')
     except Exception as e:
-        st.error(f"Erro ao carregar o arquivo direto do GitHub: {e}")
+        st.error(f"Erro ao carregar o arquivo em {caminho}: {e}")
         st.stop()
-        
     return df
 
-df = carregar_dados()
+df_bruto = carregar_dados()
 
-# Variáveis globais para métricas de topo
+# --- BARRA LATERAL (SIDEBAR) - FILTROS ---
+st.sidebar.header("🔍 Filtros de Análise")
+
+# 1. Filtro de Estado / Exterior (SG_UF)
+# Lista de UFs disponíveis no dataset ordenada
+lista_ufs = sorted(df_bruto['SG_UF'].unique().tolist())
+
+# Seletor multisseleção com padrão selecionando todos os estados/exterior
+ufs_selecionadas = st.sidebar.multiselect(
+    "Estado / Exterior (ZZ):",
+    options=lista_ufs,
+    default=lista_ufs,
+    help="Selecione um ou mais estados. 'ZZ' representa as urnas no Exterior."
+)
+
+# Filtragem inicial por UF
+df_filtrado_uf = df_bruto[df_bruto['SG_UF'].isin(ufs_selecionadas)]
+
+# 2. Filtro de Cidade (NM_MUNICIPIO)
+# As opções de cidade são atualizadas dinamicamente de acordo com as UFs selecionadas
+lista_cidades = sorted(df_filtrado_uf['NM_MUNICIPIO'].unique().tolist())
+
+cidades_selecionadas = st.sidebar.multiselect(
+    "Cidade:",
+    options=lista_cidades,
+    default=lista_cidades,
+    help="Filtre por municípios específicos."
+)
+
+# DataFrame final filtrado pela combinação de UF e Cidade
+df = df_filtrado_uf[df_filtrado_uf['NM_MUNICIPIO'].isin(cidades_selecionadas)]
+
+# Alerta caso o filtro retorne 0 registros
+if df.empty:
+    st.warning("Nenhum dado encontrado para os filtros selecionados. Por favor, ajuste as opções na barra lateral.")
+    st.stop()
+
+# --- VARIÁVEIS GLOBAIS (CÁLCULO MACRO BASEADO NO FILTRO) ---
 VOTOS_T1_CAND1 = df['Candidato1_T1'].sum()
 VOTOS_T1_CAND2 = df['Candidato2_T1'].sum()
 VOTOS_T1_OUTROS = df['Outros_T1'].sum()
@@ -36,7 +74,7 @@ BRANCOS_NULOS_T2 = df['BrancosNulos_T2'].sum()
 
 # --- CABEÇALHO ---
 st.title("📊 Dinâmica da Virada Eleitoral 2026")
-st.markdown("Uma análise matemática e estatística da origem dos votos entre o 1º e o 2º Turno.")
+st.markdown(f"Uma análise matemática e estatística da origem dos votos entre o 1º e o 2º Turno. **Registros exibidos:** {len(df):,} municípios.")
 st.divider()
 
 # ==========================================
@@ -76,6 +114,7 @@ st.markdown("De onde vieram os votos da virada eleitoral?")
 
 col3, col4 = st.columns(2)
 
+
 with col3:
     st.subheader("O 'Estoque' de Votos Disponíveis")
     reducao_abstensao = 2960239
@@ -108,20 +147,19 @@ with col4:
 st.divider()
 
 # ==========================================
-# PARTE 3: ESTATÍSTICA REGIONAL E DISPERSÃO INTERATIVA (COM AMBOS OS CANDIDATOS)
+# PARTE 3: ESTATÍSTICA REGIONAL E DISPERSÃO INTERATIVA
 # ==========================================
 st.header("3. Estabilidade e Taxa de Crescimento Municipal")
-st.markdown("Passe o cursor sobre os pontos para identificar o município. **Clique em um ponto do gráfico** para filtrar a tabela abaixo.")
+st.markdown("Passe o cursor sobre os pontos para identificar o município. **Clique em um ponto do gráfico** para filtrar a cidade abaixo.")
 
 col5, col6 = st.columns(2)
 
 with col5:
     st.subheader("Dispersão: Votos 1ºT vs Ganho no 2ºT")
     
-    # Criando o gráfico de dispersão com os DOIS candidatos juntos
     fig_scatter = go.Figure()
     
-    # Adiciona série do Candidato 1
+    # Série Candidato 1
     fig_scatter.add_trace(go.Scatter(
         x=df['Candidato1_T1'], 
         y=df['GanhoCandidato1'],
@@ -133,7 +171,7 @@ with col5:
         marker=dict(color='#1f77b4', opacity=0.6)
     ))
     
-    # Adiciona série do Candidato 2
+    # Série Candidato 2
     fig_scatter.add_trace(go.Scatter(
         x=df['Candidato2_T1'], 
         y=df['GanhoCandidato2'],
@@ -151,7 +189,6 @@ with col5:
         legend_title="Candidatos"
     )
     
-    # Habilitando a captura de clique
     evento_selecao = st.plotly_chart(
         fig_scatter, 
         use_container_width=True,
@@ -160,22 +197,19 @@ with col5:
     )
 
 with col6:
-    st.subheader("Evolução e Média de Crescimento (%)")
-    st.markdown("Candidato 1 cresceu, em média, **5.2%**. O Candidato 2 cresceu **17.1%**.")
+    st.subheader("Evolução Global no Recorte")
     
     dados_crescimento = pd.DataFrame({
         'Candidato': ['Candidato 1', 'Candidato 2'],
         '1º Turno': [VOTOS_T1_CAND1, VOTOS_T1_CAND2],
-        '2º Turno': [VOTOS_T2_CAND1, VOTOS_T2_CAND2],
-        'Taxa': ['+6.7% Global (5.2% Média Mun.)', '+19.2% Global (17.1% Média Mun.)']
+        '2º Turno': [VOTOS_T2_CAND1, VOTOS_T2_CAND2]
     })
     
-    dados_melt = pd.melt(dados_crescimento, id_vars=['Candidato', 'Taxa'], value_vars=['1º Turno', '2º Turno'], var_name='Turno', value_name='Votos')
+    dados_melt = pd.melt(dados_crescimento, id_vars=['Candidato'], value_vars=['1º Turno', '2º Turno'], var_name='Turno', value_name='Votos')
     
-    fig_line = px.line(dados_melt, x='Turno', y='Votos', color='Candidato', markers=True, text='Taxa',
+    fig_line = px.line(dados_melt, x='Turno', y='Votos', color='Candidato', markers=True,
                        color_discrete_sequence=['#1f77b4', '#d62728'])
     fig_line.update_traces(textposition="top center")
-    fig_line.update_layout(yaxis_range=[50000000, 70000000])
     st.plotly_chart(fig_line, use_container_width=True)
 
 st.divider()
@@ -192,29 +226,27 @@ if evento_selecao and "selection" in evento_selecao and "points" in evento_selec
     if len(pontos) > 0 and "text" in pontos[0]:
         cidade_selecionada = pontos[0]["text"]
 
-# Seleção e formatação de colunas
 df_tabela = df[['SG_UF', 'NM_MUNICIPIO', 'Votantes_T1', 'Candidato1_T1', 'Candidato2_T1', 
                 'Candidato1_T2', 'Candidato2_T2', 'GanhoCandidato1', 'GanhoCandidato2']].copy()
 
 df_tabela.rename(columns={'SG_UF': 'UF', 'NM_MUNICIPIO': 'Município'}, inplace=True)
 
-# Cálculo de crescimento percentual
+# Cálculo do crescimento percentual
 df_tabela['Crescimento_Cand1 (%)'] = round((df_tabela['GanhoCandidato1'] / df_tabela['Candidato1_T1'].replace(0, 1)) * 100, 2)
 df_tabela['Crescimento_Cand2 (%)'] = round((df_tabela['GanhoCandidato2'] / df_tabela['Candidato2_T1'].replace(0, 1)) * 100, 2)
 
-# Exibe mensagem de filtro ativo caso haja clique
 if cidade_selecionada:
     st.success(f"📍 Exibindo dados filtrados para a cidade selecionada no gráfico: **{cidade_selecionada}**")
     df_exibicao = df_tabela[df_tabela['Município'] == cidade_selecionada]
 else:
-    st.info("💡 Dica: Clique em qualquer ponto azul ou vermelho do gráfico de dispersão acima para isolar a cidade correspondente nesta tabela.")
+    st.info("💡 Dica: Use os filtros da barra lateral para refinar o Estado/Cidade ou clique em um ponto do gráfico acima.")
     df_exibicao = df_tabela
 
 st.dataframe(
     df_exibicao,
     column_config={
-        "GanhoCandidato1": st.column_config.ProgressColumn("Ganho Abs. Cand 1", format="%d", min_value=0, max_value=int(df_tabela['GanhoCandidato1'].max())),
-        "GanhoCandidato2": st.column_config.ProgressColumn("Ganho Abs. Cand 2", format="%d", min_value=0, max_value=int(df_tabela['GanhoCandidato2'].max())),
+        "GanhoCandidato1": st.column_config.ProgressColumn("Ganho Abs. Cand 1", format="%d", min_value=0, max_value=int(df_tabela['GanhoCandidato1'].max() if not df_tabela.empty else 1)),
+        "GanhoCandidato2": st.column_config.ProgressColumn("Ganho Abs. Cand 2", format="%d", min_value=0, max_value=int(df_tabela['GanhoCandidato2'].max() if not df_tabela.empty else 1)),
         "Crescimento_Cand1 (%)": st.column_config.NumberColumn(format="%.2f %%"),
         "Crescimento_Cand2 (%)": st.column_config.NumberColumn(format="%.2f %%"),
     },
