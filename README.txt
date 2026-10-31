@@ -209,7 +209,7 @@ Agora vem a pergunta; quem ganhou mais com isto? e novamente qual a média de ga
 
 Limitações: 
 
-
+Link do dashboard do streamlit.https://eleicoes2026-jp6fwhf3fmfeze3fbgbqul.streamlit.app/
 
 
 
