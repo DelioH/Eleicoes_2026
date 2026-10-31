@@ -14,7 +14,7 @@ st.set_page_config(page_title="Dashboard Eleitoral - Virada 2026", layout="wide"
 def carregar_dados():
     # Encontra o diretório pai (raiz do projeto) a partir de BI-StreamLit e acessa a pasta 'dados'
     diretorio_atual = Path(__file__).resolve().parent
-    caminho = diretorio_atual.parent / "dados" / "base_correlacao_2026.csv"
+    caminho = diretorio_atual / "dados" / "base_correlacao_2026.csv"
     
     try:
         df = pd.read_csv(caminho, sep=';', encoding='latin1')
