@@ -60,9 +60,10 @@ Este pipeline analítico possui forte aplicabilidade no mercado de inteligência
 6.  Inicie o painel BI com o comando: `streamlit run BI-StreamLit/app.py`
 
 ## 12. Estrutura de Pastas
-*   '/dados': Contém os CSVs brutos (não versionados no GitHub) e os otimizados.
+*   '/dados': Contém os CSVs brutos e os otimizados.
 *   '/fontes': Armazena os scripts Python de ETL e EDA (transformacao.py, analise_exploratorio_inicial.py, analise_exploratorio.py, analise_correlacao_1.py, analise_correlacao_2.py).
 *   '/BI-StreamLit/app.py': Arquivo principal da aplicação Streamlit.
+
 
 ## 13. Limitações e Melhorias Futuras
 *   **Limitações:** A análise estatística mede *associações matemáticas* agregadas por município, não rastreando a transferência individual do eleitor (o que é impossível devido ao sigilo do voto). 
