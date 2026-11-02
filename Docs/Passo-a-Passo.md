@@ -53,7 +53,7 @@ Sabendo que a conversão foi o fator predominante no "Todo", precisávamos valid
 
 Estabilidade Eleitoral: O resultado do 2º turno mudou a geografia dos votos?
 
-Descoberta: A correlação entre os votos do 1º e 2º turno para ambos os candidatos foi de 0.9995. Isso provou que não houve "bagunça" geográfica; as bases originais foram mantidas.
+Descoberta: A correlação entre os votos do 1º e 2º turno para ambos os candidatos foi de 0.9995. Isso provou que não houve "bagunça" geográfica; as bases originais (redutos) foram mantidas.
 
 Origem dos Votos (A Conversão Local): Os ganhos do 2º turno ocorreram nas cidades onde havia muitos votos de "Outros" no 1º turno?
 
