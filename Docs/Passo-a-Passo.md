@@ -114,7 +114,7 @@ AC          22                 31512        -15092          9743                
 ZZ         145                 29718         27597         42767                    0.8955                    0.8807                20.04                22.60
 RR          15                 19817        -11647          9085                    0.1419                    0.9984               -12.29                 3.49
 
-Com base nas informações avaliadas, os estados com maior quantidade de 'Outros' votos tiveram uma correlação muito forte com os ganhos dos candidatos; principalmente nos estados com mais de 100.000 votos de 'Outros'. Alguns estamos com menor quantidade tiveram algumas correlações bem divergentes entre os candidatos; mas não vamos considerar nesta análise, pois representam uma pequena parte do todo. Sobre o crecimetno médio, o candidato 2 conseguiu uma vantagem muito grande em relação ao candidato 1. Sendo o maior valor absoluto em SP, com quase 1,4 milhão de votos a mais de ganho em relação ao candidato 1. Agora, em percentuais, no RJ é o maior destaque, onde o candidato 1 teve um crescimento médio de 1,97% o candidato 2 obteve um crescimento médio de 21,03%. Em dados absolutos, foram 670.183 de votos a mais que o candidato 1.
+Com base nas informações avaliadas, os estados com maior quantidade de 'Outros' votos tiveram uma correlação muito forte com os ganhos dos candidatos; principalmente nos estados com mais de 100.000 votos de 'Outros'. Alguns estados com menor quantidade tiveram algumas correlações bem divergentes entre os candidatos; mas não vamos considerar nesta análise, pois representam uma pequena parte do todo. Sobre o crecimetno médio, o candidato 2 conseguiu uma vantagem muito grande em relação ao candidato 1. Sendo o maior valor absoluto em SP, com quase 1,4 milhão de votos a mais de ganho em relação ao candidato 1. Agora, em percentuais, no RJ é o maior destaque, onde o candidato 1 teve um crescimento médio de 1,97% o candidato 2 obteve um crescimento médio de 21,03%. Em dados absolutos, foram 670.183 de votos a mais que o candidato 1.
 
 Passo 5: Desenvolvimento do Dashboard (Streamlit)
 
@@ -132,6 +132,7 @@ Performance: Utilizamos @st.cache_data para carregamento instantâneo.
 Conclusão
 
 O projeto foi muito além de plotar gráficos. Ele atendeu aos requisitos do pipeline analítico: partiu de uma dúvida de negócio, processou big data (5.7M de linhas) usando ETL  em Python, utilizou estatística dedutiva (cálculo de potenciais máximos) e indutiva (correlação de Pearson) para desmistificar o fenômeno da virada, e culminou em uma aplicação web interativa baseada em dados matematicamente validados. Para trabalhos futuros, sugiro:
+- Utilizar métodos de regressão para encontrar as 'transferencias' de votos.
 - Cruzamentos socioeconomicos: Integrar dados socioeconomicos como IDH, renda media por capta, grau de urbanização, grau de saneamento básico, assim como proporção de beneficiários de programas sociais, aposentados entre outros para correlacionar com a taxa de crescimento dos candidatos.
 - Utilizar dados de eleições anteriores para comparar as dinâmicas de segundo turno e ganhos dos candidatos.
 - Correlação da rejeição dos candidatos com a migração de votos dos outros candidatos.

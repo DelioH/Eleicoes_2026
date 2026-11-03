@@ -214,6 +214,7 @@ with col6:
 
 st.divider()
 
+
 # ==========================================
 # PARTE 4: TABELA INTERATIVA (MATRIZ DE DADOS)
 # ==========================================

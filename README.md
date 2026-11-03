@@ -68,7 +68,7 @@ Este pipeline analítico possui forte aplicabilidade no mercado de inteligência
 
 ## 13. Limitações e Melhorias Futuras
 *   **Limitações:** A análise estatística mede *associações matemáticas* agregadas por município, não rastreando a transferência individual do eleitor (o que é impossível devido ao sigilo do voto). 
-*   **Melhorias Futuras (Fase 2):** Inclusão de dados detalhados de logs para medir o impacto de urnas apuradas após as 17h, além do cruzamento com indicadores do Atlas Brasil (IDH) para entender o perfil socioeconômico das cidades com maiores índices de virada.
+*   **Melhorias Futuras (Fase 2):** Utilização de regressão para encontrar as 'transferencias' de votos dos candidatos que não foram para o segundo turno para o segundo turno.Inclusão de dados detalhados de logs para medir o impacto de urnas apuradas após as 17h, além do cruzamento com indicadores do Atlas Brasil (IDH) para entender o perfil socioeconômico das cidades com maiores índices de virada.
 
 ## 14. Links de Entrega
 *   **Repositório Oficial da Turma:** `[Inserir Link]`
