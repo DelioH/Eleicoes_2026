@@ -73,5 +73,5 @@ Este pipeline analítico possui forte aplicabilidade no mercado de inteligência
 ## 14. Links de Entrega
 *   **Repositório Oficial da Turma:** `[Inserir Link]`
 *   **Repostiório pessoal:** https://github.com/DelioH/Eleicoes_2026
-*   **Vídeo Explicativo (YouTube):** `[Inserir Link]`
+*   **Vídeo Explicativo (YouTube):** `(https://youtu.be/nTohFWB-HSU)`
 *   **Dashboard StreamLit:** https://eleicoes2026-jp6fwhf3fmfeze3fbgbqul.streamlit.app/
